@@ -1,4 +1,4 @@
-# Personal Companion & Wellness AI Agent
+# Personal Wellness & Companion AI Agent
 
 A sophisticated multi-agent system built with Google ADK that provides empathetic personal assistance through therapeutic support, task management, and intelligent scheduling.
 
