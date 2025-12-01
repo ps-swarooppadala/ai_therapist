@@ -1,0 +1,178 @@
+{
+  "eval_set_id": "evalset_emotional_agent",
+  "name": "evalset_emotional_agent",
+  "eval_cases": [
+    {
+      "eval_id": "casee5d8d3",
+      "conversation": [
+        {
+          "invocation_id": "e-73cb4140-275f-494b-bab4-08b301645a2b",
+          "user_content": {
+            "parts": [
+              {
+                "text": "I'm really stressed about my presentation tomorrow"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "I get that presentation jitters are no fun. Remember to take some deep breaths! Try the 4-7-8 breathing: inhale for 4, hold for 7, and exhale for 8. Doing this a few times can really help calm your nerves. You've got this!"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "personal_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-d0cdf14c-1992-49d0-8dce-160a94a6a773",
+                        "args": {
+                          "agent_name": "therapeutic_support"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "personal_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-d0cdf14c-1992-49d0-8dce-160a94a6a773",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "therapeutic_support",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-fa3c224d-da8c-4bb8-b43c-37583a9dc5b7",
+                        "args": {},
+                        "name": "load_memory"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "therapeutic_support",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-fa3c224d-da8c-4bb8-b43c-37583a9dc5b7",
+                        "name": "load_memory",
+                        "response": {
+                          "user_id": "user",
+                          "memory": {
+                            "personal_details": {},
+                            "preferences": {},
+                            "therapeutic_patterns": {
+                              "triggers": {},
+                              "preferred_styles": [],
+                              "avoided_styles": []
+                            },
+                            "history": [],
+                            "interests": []
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764607550.196311
+        },
+        {
+          "invocation_id": "e-8d2c157a-a80b-4ac0-a0f6-48816301daa2",
+          "user_content": {
+            "parts": [
+              {
+                "text": "That helped, I feel better"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Awesome! Your brain is learning what works for you. Use that whenever stress hits."
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "therapeutic_support",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-3f6f7e4d-b198-4029-baeb-b065ec1fe897",
+                        "args": {
+                          "helpful": true,
+                          "trigger": "stressed",
+                          "response": "4-7-8 breathing"
+                        },
+                        "name": "save_therapeutic_pattern"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "therapeutic_support",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-3f6f7e4d-b198-4029-baeb-b065ec1fe897",
+                        "name": "save_therapeutic_pattern",
+                        "response": {
+                          "result": "✓ Marked as helpful for 'stressed'"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764607583.146588
+        }
+      ],
+      "session_input": {
+        "app_name": "ai_therapist",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1764608000.96347
+    }
+  ],
+  "creation_timestamp": 1764607995.890626
+}

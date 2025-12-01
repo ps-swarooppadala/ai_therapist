@@ -1,0 +1,492 @@
+{
+  "eval_set_id": "evalset_set_get_reminder_tasks_1",
+  "name": "evalset_set_get_reminder_tasks_1",
+  "eval_cases": [
+    {
+      "eval_id": "case1_set_get_reminder_task",
+      "conversation": [
+        {
+          "invocation_id": "e-b6bdd3a8-bade-4959-bee6-a1a746616a4e",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Hi"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Hi! I'm here to help you with:\n• Emotional support & coping strategies\n• Tasks, reminders & scheduling\n• Goal setting & personal growth\n• Evidence-based wellness info\n\nWhat's on your mind today?\n"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {},
+          "creation_timestamp": 1764606779.900608
+        },
+        {
+          "invocation_id": "e-3d9033a0-9560-4775-a9e4-ccebff78b865",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Set reminders tomorrow at 3pm and 4pm for my medicine. Also add a task to finish my report by Friday."
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "✓ All set!\n• Reminder set: Take medicine on 2025-12-02 at 15:00\n• Reminder set: Take medicine on 2025-12-02 at 16:00\n• Task created: Finish report (due: 2025-12-06)"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "personal_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-38eb71b3-dc5d-4e74-8899-5fa411dc26be",
+                        "args": {
+                          "agent_name": "task_manager"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "personal_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-38eb71b3-dc5d-4e74-8899-5fa411dc26be",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "task_manager",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-f3667518-3844-4f77-9e55-6164adb7ae6e",
+                        "args": {},
+                        "name": "get_current_datetime"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "task_manager",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-f3667518-3844-4f77-9e55-6164adb7ae6e",
+                        "name": "get_current_datetime",
+                        "response": {
+                          "result": "Date: 2025-12-01 (Monday), Time: 22:03"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "task_manager",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-99a86228-0746-4d71-8ca9-e55b58cc6249",
+                        "args": {
+                          "title": "Take medicine",
+                          "date": "2025-12-02",
+                          "time": "15:00"
+                        },
+                        "name": "schedule_reminder"
+                      }
+                    },
+                    {
+                      "function_call": {
+                        "id": "adk-74ba6834-ed72-4760-802a-b89e191ecf0c",
+                        "args": {
+                          "title": "Take medicine",
+                          "date": "2025-12-02",
+                          "time": "16:00"
+                        },
+                        "name": "schedule_reminder"
+                      }
+                    },
+                    {
+                      "function_call": {
+                        "id": "adk-573c4429-d584-47fe-b33f-2f34015c23a4",
+                        "args": {
+                          "priority": "medium",
+                          "title": "Finish report",
+                          "due_date": "2025-12-06"
+                        },
+                        "name": "create_task"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "task_manager",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-99a86228-0746-4d71-8ca9-e55b58cc6249",
+                        "name": "schedule_reminder",
+                        "response": {
+                          "result": "✓ Reminder set: Take medicine on 2025-12-02 at 15:00"
+                        }
+                      }
+                    },
+                    {
+                      "function_response": {
+                        "id": "adk-74ba6834-ed72-4760-802a-b89e191ecf0c",
+                        "name": "schedule_reminder",
+                        "response": {
+                          "result": "✓ Reminder set: Take medicine on 2025-12-02 at 16:00"
+                        }
+                      }
+                    },
+                    {
+                      "function_response": {
+                        "id": "adk-573c4429-d584-47fe-b33f-2f34015c23a4",
+                        "name": "create_task",
+                        "response": {
+                          "result": "✓ Task created: Finish report (due: 2025-12-06)"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764606797.630213
+        },
+        {
+          "invocation_id": "e-56f38cac-f957-4479-a7a2-d60aa83e8acd",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Thank you. Can you tell me all the tasks and reminders you have set for me?"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Here are all the tasks and reminders I have set for you:\n\n📋 **Tasks** (1):\n\n• Finish report - Priority: medium (due: 2025-12-06)\n\n📅 **Reminders** (2):\n\n• Take medicine - 2025-12-02 at 15:00\n• Take medicine - 2025-12-02 at 16:00"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "task_manager",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-b3de6306-1c81-4dff-aeb1-6b7616fb8ff5",
+                        "args": {},
+                        "name": "get_all_items"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "task_manager",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-b3de6306-1c81-4dff-aeb1-6b7616fb8ff5",
+                        "name": "get_all_items",
+                        "response": {
+                          "result": "📋 **Tasks** (1):\n\n• Finish report - Priority: medium (due: 2025-12-06)\n\n📅 **Reminders** (2):\n\n• Take medicine - 2025-12-02 at 15:00\n• Take medicine - 2025-12-02 at 16:00"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764606872.716227
+        }
+      ],
+      "session_input": {
+        "app_name": "ai_therapist",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1764607043.703299
+    },
+    {
+      "eval_id": "case2",
+      "conversation": [
+        {
+          "invocation_id": "e-8eb4def3-213d-4ee6-9b35-182469aa1f14",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Set reminders tomorrow at 3pm and 4pm for my medicine. Also add a task to finish my report by Friday."
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "All set!\n• 2 medicine reminders tomorrow at 3pm and 4pm\n• Task to finish report by Friday"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "personal_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-13ef682b-b3bf-4e13-b596-8a81fd1a5368",
+                        "args": {
+                          "agent_name": "task_manager"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "personal_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-13ef682b-b3bf-4e13-b596-8a81fd1a5368",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "task_manager",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-7e2b449d-7f7b-472c-aabb-9a14d31763b6",
+                        "args": {},
+                        "name": "get_current_datetime"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "task_manager",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-7e2b449d-7f7b-472c-aabb-9a14d31763b6",
+                        "name": "get_current_datetime",
+                        "response": {
+                          "result": "Date: 2025-12-01 (Monday), Time: 22:27"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "task_manager",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-41d01e36-46a3-45bf-8370-957f4dedabf9",
+                        "args": {
+                          "title": "Take medicine",
+                          "date": "2025-12-02",
+                          "time": "15:00"
+                        },
+                        "name": "schedule_reminder"
+                      }
+                    },
+                    {
+                      "function_call": {
+                        "id": "adk-81e45124-595c-4464-a732-93fd58f52c94",
+                        "args": {
+                          "time": "16:00",
+                          "date": "2025-12-02",
+                          "title": "Take medicine"
+                        },
+                        "name": "schedule_reminder"
+                      }
+                    },
+                    {
+                      "function_call": {
+                        "id": "adk-9d40286e-8327-43b1-8ffa-28b2d082c20c",
+                        "args": {
+                          "due_date": "2025-12-06",
+                          "title": "Finish report",
+                          "priority": "high"
+                        },
+                        "name": "create_task"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "task_manager",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-41d01e36-46a3-45bf-8370-957f4dedabf9",
+                        "name": "schedule_reminder",
+                        "response": {
+                          "result": "✓ Reminder set: Take medicine on 2025-12-02 at 15:00"
+                        }
+                      }
+                    },
+                    {
+                      "function_response": {
+                        "id": "adk-81e45124-595c-4464-a732-93fd58f52c94",
+                        "name": "schedule_reminder",
+                        "response": {
+                          "result": "✓ Reminder set: Take medicine on 2025-12-02 at 16:00"
+                        }
+                      }
+                    },
+                    {
+                      "function_response": {
+                        "id": "adk-9d40286e-8327-43b1-8ffa-28b2d082c20c",
+                        "name": "create_task",
+                        "response": {
+                          "result": "✓ Task created: Finish report (due: 2025-12-06)"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764608229.614467
+        },
+        {
+          "invocation_id": "e-348abf52-2876-47f8-a8dd-3db3c369a8eb",
+          "user_content": {
+            "parts": [
+              {
+                "text": "show me everything I have"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Here's everything you have scheduled:\n\n**Tasks** (1):\n* Finish report - Priority: high (due: 2025-12-06)\n\n**Reminders** (2):\n* Take medicine - 2025-12-02 at 15:00\n* Take medicine - 2025-12-02 at 16:00"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "task_manager",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-9a77713d-5edf-4451-84b5-7e41157aa5a9",
+                        "args": {},
+                        "name": "get_all_items"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "task_manager",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-9a77713d-5edf-4451-84b5-7e41157aa5a9",
+                        "name": "get_all_items",
+                        "response": {
+                          "result": "📋 **Tasks** (1):\n\n• Finish report - Priority: high (due: 2025-12-06)\n\n📅 **Reminders** (2):\n\n• Take medicine - 2025-12-02 at 15:00\n• Take medicine - 2025-12-02 at 16:00"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764608255.483177
+        }
+      ],
+      "session_input": {
+        "app_name": "ai_therapist",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1764608277.9817317
+    }
+  ],
+  "creation_timestamp": 1764607018.30082
+}

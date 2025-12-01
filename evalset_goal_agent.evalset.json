@@ -1,0 +1,228 @@
+{
+  "eval_set_id": "evalset_goal_agent",
+  "name": "evalset_goal_agent",
+  "eval_cases": [
+    {
+      "eval_id": "casec3db71",
+      "conversation": [
+        {
+          "invocation_id": "e-0e67d40b-4c3b-4345-bfbc-62342a2971a9",
+          "user_content": {
+            "parts": [
+              {
+                "text": "I want to start exercising"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "What kind of exercise are you thinking of - like going to the gym, running, or something else?\n"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "personal_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-f80dfa3c-1fa0-4351-97a7-b1f9a812e9f4",
+                        "args": {
+                          "agent_name": "goal_refinement"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "personal_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-f80dfa3c-1fa0-4351-97a7-b1f9a812e9f4",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764608311.291065
+        },
+        {
+          "invocation_id": "e-f52791ce-5ee1-4ac5-87b8-03f5c4352fdf",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Running"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "OK, I've created a \"Running Routine\" goal for you, starting tomorrow. Here's a summary:\n\n**Running Routine**\n\n*   **Goal:** Establish a consistent running schedule\n*   **Routine:**\n    *   Warm up for 5 minutes\n    *   Run for 30 minutes\n    *   Cool down for 5 minutes\n    *   Track your run\n*   **Frequency:** 3x per week (Mon/Wed/Fri)\n*   **Duration:** 30 days\n*   **Start Date:** 2025-12-02\n\nType 'approve' to activate this goal, or tell me what you'd like to change.\n"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "goal_refinement",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-9fdc2c7b-1b58-40d1-846f-79ec61cd58cf",
+                        "args": {},
+                        "name": "get_current_datetime"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "goal_refinement",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-9fdc2c7b-1b58-40d1-846f-79ec61cd58cf",
+                        "name": "get_current_datetime",
+                        "response": {
+                          "result": "Date: 2025-12-01 (Monday), Time: 22:28"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "goal_refinement",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-dfa9ae58-bb2e-4dd9-ac25-620f60762556",
+                        "args": {
+                          "title": "Running Routine",
+                          "frequency": "3x per week (Mon/Wed/Fri)",
+                          "routine": "• Warm up for 5 minutes\n• Run for 30 minutes\n• Cool down for 5 minutes\n• Track your run",
+                          "goal_description": "Establish a consistent running schedule",
+                          "start_date": "2025-12-02",
+                          "duration": "30 days"
+                        },
+                        "name": "create_goal_with_routine"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "goal_refinement",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-dfa9ae58-bb2e-4dd9-ac25-620f60762556",
+                        "name": "create_goal_with_routine",
+                        "response": {
+                          "result": "\n📋 Goal Created (ID: 1) - Pending Your Approval\n\n**Running Routine**\n\n🎯 Goal: Establish a consistent running schedule\n\n📅 Routine:\n• Warm up for 5 minutes\n• Run for 30 minutes\n• Cool down for 5 minutes\n• Track your run\n\n⏰ Frequency: 3x per week (Mon/Wed/Fri)\n⏳ Duration: 30 days\n🚀 Start Date: 2025-12-02\n\nType 'approve' to activate this goal, or tell me what you'd like to change.\n"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764608319.729049
+        },
+        {
+          "invocation_id": "e-61e708c7-c0a3-48d0-8be4-72941615fd9e",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Approve"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Great! The 'Running Routine' goal is now active. Let's make it happen! 🎉\n"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "goal_refinement",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-e6d64d6b-24f4-4796-abc1-754fe179bab3",
+                        "args": {
+                          "goal_id": 1
+                        },
+                        "name": "approve_goal"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "goal_refinement",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-e6d64d6b-24f4-4796-abc1-754fe179bab3",
+                        "name": "approve_goal",
+                        "response": {
+                          "result": "✅ Goal 'Running Routine' is now active! Let's make it happen! 🎉"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764608328.121149
+        }
+      ],
+      "session_input": {
+        "app_name": "ai_therapist",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1764608354.1811106
+    }
+  ],
+  "creation_timestamp": 1764608350.1813278
+}
